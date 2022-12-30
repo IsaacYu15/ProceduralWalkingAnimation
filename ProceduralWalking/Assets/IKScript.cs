@@ -48,7 +48,11 @@ public class IKScript : MonoBehaviour
 
         bones[0].LookAt(EndOfBone2.position);
 
-
+        if (EndOfBone1.position != EndOfBone2.position)
+        {
+            Vector3 offset = EndOfBone1.position - EndOfBone2.position;
+            bones[2].position += offset;
+        }
 
     }
 
