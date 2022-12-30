@@ -6,7 +6,7 @@ This project aims to create a spider like creature which walks using procedural 
 
 ## PREREQUISITES
   [Unity](https://unity.com/download) Version 2021.3.11f1. 
-  [C# in VsCode] (https://code.visualstudio.com/docs/languages/csharp)
+  [C# in VsCode](https://code.visualstudio.com/docs/languages/csharp)
   
 ## TRY IT YOURSELF!
   1. Download the project as a ZipFile
