@@ -5,4 +5,5 @@ This project aims to create a spider like creature which walks using procedural 
   1. Download the project as a ZipFile
   2. Unzip the file
   3. Open up the UnityHub and select the project
+  
   _Note that I use Unity 2021.3.11f1. If you use a differnt version of Unity it may not work_
