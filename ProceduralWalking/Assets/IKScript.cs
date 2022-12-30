@@ -44,9 +44,13 @@ public class IKScript : MonoBehaviour
         if (Vector3.Distance(bones[0].position, Target.position) < limbLength && bones[2].position != Target.position)
         { 
             bones[2].position = Target.position;
+            bones[0].LookAt(EndOfBone2.position);
+        } else
+        {
+            bones[0].LookAt(Target.position);
         }
 
-        bones[0].LookAt(EndOfBone2.position);
+
 
         if (EndOfBone1.position != EndOfBone2.position)
         {
