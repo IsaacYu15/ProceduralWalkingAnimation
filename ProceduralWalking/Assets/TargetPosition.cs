@@ -7,7 +7,9 @@ public class TargetPosition : MonoBehaviour
     public Transform target;
     
     public Transform feet;
+    Vector3 feetTarget;
 
+    public float moveSpeed;
     public float maxStep;
 
     public bool moveFeet;
@@ -25,7 +27,6 @@ public class TargetPosition : MonoBehaviour
         {
             //divide by two as the position of the feet is defined at the center of the cube
             feet.transform.position = target.transform.position + new Vector3(0, feet.transform.localScale.y / 2, 0) ;
-            moveFeet = true;
 
         }
     }
