@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class IKScript : MonoBehaviour
 {
-    public Transform Target;
+    public Transform body;
+    public Transform Target; //targets the feet which are upright
     public Transform EndOfBone2;
     public Transform EndOfBone1;
     public int chainLength;
@@ -40,7 +41,8 @@ public class IKScript : MonoBehaviour
     {
 
         bones[1].LookAt(Target.position);
-
+        
+        
         if (Vector3.Distance(bones[0].position, Target.position) < limbLength && bones[2].position != Target.position)
         { 
             bones[2].position = Target.position;
@@ -57,6 +59,7 @@ public class IKScript : MonoBehaviour
             Vector3 offset = EndOfBone1.position - EndOfBone2.position;
             bones[2].position += offset;
         }
+
 
     }
 
