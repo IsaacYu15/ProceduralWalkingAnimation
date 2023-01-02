@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class TargetPosition : MonoBehaviour
 {
-    public Transform target;
-    
+
+    public Transform target; 
     public Transform feet;
-    Vector3 feetTarget;
 
     public float moveSpeed;
     public float maxStep;
