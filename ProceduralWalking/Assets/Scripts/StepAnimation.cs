@@ -13,9 +13,11 @@ public class StepAnimation : MonoBehaviour
 
     float fraction;
 
+    public bool moveFeet;
+
     private void Update()
     {
-        if (Vector3.Distance (target, transform.position) > 0.1f)
+        if (moveFeet)
         {
             if (fraction < 1)
             {
@@ -24,6 +26,9 @@ public class StepAnimation : MonoBehaviour
                 Vector3 m1 = Vector3.Lerp(t_trans, control, fraction);
                 Vector3 m2 = Vector3.Lerp(control, target, fraction);
                 transform.position = Vector3.Lerp(m1, m2, fraction);
+            } else
+            {
+                moveFeet = false;
             }
 
         } else

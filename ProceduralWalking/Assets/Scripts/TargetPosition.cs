@@ -11,8 +11,6 @@ public class TargetPosition : MonoBehaviour
 
     public float maxStep;
 
-    public bool moveFeet;
-
     private void Start()
     {
         step = feet.GetComponent<StepAnimation>();
@@ -25,15 +23,15 @@ public class TargetPosition : MonoBehaviour
         {
             target.transform.position = hit.point;
         }
-        
-        if (Vector3.Distance (feet.position, target.position) > maxStep)
+
+        if (Vector3.Distance (feet.position - new Vector3 (0, feet.transform.localScale.y/2), target.position) > maxStep)
         {
-            //divide by two as the position of the feet is defined at the center of the cube
             step.t_trans = feet.transform.position;
             step.target = target.transform.position + new Vector3(0, feet.transform.localScale.y / 2, 0) ;
             step.control = (target.transform.position + feet.transform.position) / 2 + Vector3.up * step.stepHeight;
-
+            step.moveFeet = true;
         }
+
     }
 
 
