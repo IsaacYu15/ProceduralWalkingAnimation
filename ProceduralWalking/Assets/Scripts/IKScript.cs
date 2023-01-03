@@ -33,16 +33,6 @@ public class IKScript : MonoBehaviour
     }
 
 
-    public Vector3 averageVec (Vector3 pos1, Vector3 pos2)
-    {
-        Vector3 avgVec = new Vector3((pos1.x + pos2.x) / 2,
-                                    (pos1.y + pos1.y) / 2,
-                                    (pos1.z + pos2.z) / 2);
-
-
-        return avgVec;
-    }
-
     void Update()
     {
         bones[1].position = Target.position;
@@ -52,7 +42,7 @@ public class IKScript : MonoBehaviour
         float t_side = Vector3.Distance(bones[0].position, EndOfBone1.position);
         float t_height = Mathf.Sqrt (Mathf.Pow(t_side, 2) - Mathf.Pow(t_base, 2));
 
-        Vector3 vertex = averageVec(bones[0].position, bones[1].position) + new Vector3(0, t_height);
+        Vector3 vertex = (bones[0].position + bones[1].position)/2 + Vector3.up * t_height;
 
         bones[1].LookAt(vertex);
 

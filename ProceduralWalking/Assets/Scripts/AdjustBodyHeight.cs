@@ -13,7 +13,7 @@ public class AdjustBodyHeight : MonoBehaviour
 
         if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, 1 << 7))
         {
-            //transform.rotation = new Quaternion(hit.normal.x, hit.normal.y, hit.normal.z, transform.rotation.w);
+            transform.rotation = new Quaternion(hit.normal.x, hit.normal.y, hit.normal.z, transform.rotation.w);
 
             if (hit.distance != minHeightFromGround)
             {

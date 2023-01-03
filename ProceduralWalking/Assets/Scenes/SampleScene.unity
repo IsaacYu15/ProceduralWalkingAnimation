@@ -633,7 +633,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1599069022}
   feet: {fileID: 1970023212}
-  moveSpeed: 10
   maxStep: 3
   moveFeet: 0
 --- !u!135 &342743257
@@ -943,7 +942,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1971034861}
   feet: {fileID: 1997879681}
-  moveSpeed: 10
   maxStep: 3
   moveFeet: 0
 --- !u!135 &486958906
@@ -2246,7 +2244,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1944004706}
   feet: {fileID: 1836230515}
-  moveSpeed: 10
   maxStep: 3
   moveFeet: 0
 --- !u!135 &1448674878
@@ -2324,6 +2321,7 @@ GameObject:
   - component: {fileID: 1478593668}
   - component: {fileID: 1478593667}
   - component: {fileID: 1478593666}
+  - component: {fileID: 1478593669}
   m_Layer: 6
   m_Name: Feet4
   m_TagString: Untagged
@@ -2410,6 +2408,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478593664}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1478593669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478593664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340d8bacf515151439c246dd9167689d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  stepHeight: 2
+  target: {x: 0, y: 0, z: 0}
+  control: {x: 0, y: 0, z: 0}
+  t_trans: {x: 0, y: 0, z: 0}
 --- !u!1 &1503392309
 GameObject:
   m_ObjectHideFlags: 0
@@ -2945,6 +2960,7 @@ GameObject:
   - component: {fileID: 1836230518}
   - component: {fileID: 1836230517}
   - component: {fileID: 1836230516}
+  - component: {fileID: 1836230519}
   m_Layer: 6
   m_Name: Feet3
   m_TagString: Untagged
@@ -3031,6 +3047,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836230514}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1836230519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836230514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340d8bacf515151439c246dd9167689d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  stepHeight: 2
+  target: {x: 0, y: 0, z: 0}
+  control: {x: 0, y: 0, z: 0}
+  t_trans: {x: 0, y: 0, z: 0}
 --- !u!1 &1842192088
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,7 +3166,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1503392310}
   feet: {fileID: 1478593665}
-  moveSpeed: 10
   maxStep: 3
   moveFeet: 0
 --- !u!135 &1865620297
@@ -3490,6 +3522,7 @@ GameObject:
   - component: {fileID: 1970023215}
   - component: {fileID: 1970023214}
   - component: {fileID: 1970023213}
+  - component: {fileID: 1970023216}
   m_Layer: 6
   m_Name: Feet2
   m_TagString: Untagged
@@ -3576,6 +3609,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970023211}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1970023216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970023211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340d8bacf515151439c246dd9167689d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  stepHeight: 2
+  target: {x: 0, y: 0, z: 0}
+  control: {x: 0, y: 0, z: 0}
+  t_trans: {x: 0, y: 0, z: 0}
 --- !u!1 &1971034860
 GameObject:
   m_ObjectHideFlags: 0
@@ -3671,6 +3721,7 @@ GameObject:
   - component: {fileID: 1997879680}
   - component: {fileID: 1997879679}
   - component: {fileID: 1997879678}
+  - component: {fileID: 1997879682}
   m_Layer: 6
   m_Name: Feet1
   m_TagString: Untagged
@@ -3757,6 +3808,23 @@ Transform:
   m_Father: {fileID: 2118458154}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1997879682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997879677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340d8bacf515151439c246dd9167689d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  stepHeight: 2
+  target: {x: 0, y: 0, z: 0}
+  control: {x: 0, y: 0, z: 0}
+  t_trans: {x: 0, y: 0, z: 0}
 --- !u!1 &2047447807
 GameObject:
   m_ObjectHideFlags: 0
