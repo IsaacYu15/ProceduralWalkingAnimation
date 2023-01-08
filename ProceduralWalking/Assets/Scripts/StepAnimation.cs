@@ -19,6 +19,7 @@ public class StepAnimation : MonoBehaviour
     {
         if (moveFeet)
         {
+            //lerp is given as a fraction of a journey
             if (fraction < 1)
             {
                 //Bezier Curve calculations
