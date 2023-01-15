@@ -5,12 +5,8 @@ using UnityEngine;
 public class BodyMovements : MonoBehaviour
 {
     public Transform body;
-    public float swaySpeed;
-    public float swayAmount;
 
     public float minHeightFromGround;
-
-    float count;
 
     void Update()
     {
