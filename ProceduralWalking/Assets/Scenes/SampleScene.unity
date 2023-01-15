@@ -4071,8 +4071,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 527617424}
-  swaySpeed: 2
-  swayAmount: 20
+  feetParent: {fileID: 2118458154}
+  feets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   minHeightFromGround: 2.5
 --- !u!1 &1060018414
 GameObject:
