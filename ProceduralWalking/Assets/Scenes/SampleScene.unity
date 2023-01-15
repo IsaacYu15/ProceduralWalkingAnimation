@@ -2373,7 +2373,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527617423}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.29, y: 1.0595864, z: -1.32}
   m_LocalScale: {x: 1.0786362, y: 1.795565, z: 2.2711349}
   m_ConstrainProportionsScale: 0
@@ -4067,9 +4067,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1040653595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f305e2c08bb58646bd110552549df33, type: 3}
+  m_Script: {fileID: 11500000, guid: d0b40961222334040a456d43adeff478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 527617424}
+  swaySpeed: 2
+  swayAmount: 20
   minHeightFromGround: 2.5
 --- !u!1 &1060018414
 GameObject:
