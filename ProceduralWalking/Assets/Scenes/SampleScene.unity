@@ -398,10 +398,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 435517603}
   Target: {fileID: 41669913}
+  stepAnim: {fileID: 1198871167}
   EndOfBone2: {fileID: 1774858622}
   EndOfBone1: {fileID: 1930142466}
-  chainLength: 2
   bones: []
+  chainLength: 2
   limbLength: 0
 --- !u!1 &87887186
 GameObject:
@@ -1202,10 +1203,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 435517603}
   Target: {fileID: 1835575737}
+  stepAnim: {fileID: 1836230519}
   EndOfBone2: {fileID: 978652086}
   EndOfBone1: {fileID: 2102406315}
-  chainLength: 2
   bones: []
+  chainLength: 2
   limbLength: 0
 --- !u!1 &299098404
 GameObject:
@@ -1677,10 +1679,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 435517603}
   Target: {fileID: 153923241}
+  stepAnim: {fileID: 1997879682}
   EndOfBone2: {fileID: 1378162313}
   EndOfBone1: {fileID: 1402719442}
-  chainLength: 2
   bones: []
+  chainLength: 2
   limbLength: 0
 --- !u!1 &342743254
 GameObject:
@@ -2342,10 +2345,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 435517603}
   Target: {fileID: 1517123712}
+  stepAnim: {fileID: 932119153}
   EndOfBone2: {fileID: 1504178799}
   EndOfBone1: {fileID: 303615933}
-  chainLength: 2
   bones: []
+  chainLength: 2
   limbLength: 0
 --- !u!1 &527617423
 GameObject:
@@ -3303,10 +3307,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 435517603}
   Target: {fileID: 2077205157}
+  stepAnim: {fileID: 1970023216}
   EndOfBone2: {fileID: 1341100783}
   EndOfBone1: {fileID: 216335231}
-  chainLength: 2
   bones: []
+  chainLength: 2
   limbLength: 0
 --- !u!1 &827973894
 GameObject:
@@ -4071,6 +4076,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 527617424}
+  minHeightFromGround: 1
+  feetCount: 8
   feetParent: {fileID: 2118458154}
   feets:
   - {fileID: 0}
@@ -4081,7 +4088,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  minHeightFromGround: 2.5
+  swayAmount: 0.02
 --- !u!1 &1060018414
 GameObject:
   m_ObjectHideFlags: 0
@@ -5299,10 +5306,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 435517603}
   Target: {fileID: 1062540708}
+  stepAnim: {fileID: 1192532038}
   EndOfBone2: {fileID: 1101207481}
   EndOfBone1: {fileID: 473866124}
-  chainLength: 2
   bones: []
+  chainLength: 2
   limbLength: 0
 --- !u!1 &1478593664
 GameObject:
@@ -5827,10 +5835,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 435517603}
   Target: {fileID: 357852935}
+  stepAnim: {fileID: 251907211}
   EndOfBone2: {fileID: 1885268640}
   EndOfBone1: {fileID: 363444480}
-  chainLength: 2
   bones: []
+  chainLength: 2
   limbLength: 0
 --- !u!1 &1708799576
 GameObject:
@@ -6519,10 +6528,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 435517603}
   Target: {fileID: 836077344}
+  stepAnim: {fileID: 1478593669}
   EndOfBone2: {fileID: 827973895}
   EndOfBone1: {fileID: 1430335679}
-  chainLength: 2
   bones: []
+  chainLength: 2
   limbLength: 0
 --- !u!1 &1865620294
 GameObject:

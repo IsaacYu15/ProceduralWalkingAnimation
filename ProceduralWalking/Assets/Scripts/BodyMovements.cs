@@ -47,12 +47,12 @@ public class BodyMovements : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, averageFeet.y + minHeightFromGround, transform.position.z);
 
-        //body sway
+        //body moves up and down slightly for a breathing effect 
         fraction += Time.deltaTime * 0.5f;
 
         if (swayUp)
         {
-            t_sway = Mathf.Lerp(-Mathf.PI / 2, Mathf.PI / 2, fraction);
+            t_sway = Mathf.Lerp(-1, 1, fraction);
 
             if (fraction > 1)
             {
@@ -62,7 +62,7 @@ public class BodyMovements : MonoBehaviour
         }
         else
         {
-            t_sway = Mathf.Lerp(Mathf.PI / 2, -Mathf.PI / 2, fraction);
+            t_sway = Mathf.Lerp(1, -1, fraction);
 
             if (fraction > 1)
             {

@@ -11,7 +11,7 @@ public class StepAnimation : MonoBehaviour
     public Vector3 control;
     public Vector3 t_trans;
 
-    float fraction;
+    public float fraction;
 
     public bool moveFeet;
 
