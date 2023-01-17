@@ -993,6 +993,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   control: {x: 0, y: 0, z: 0}
   t_trans: {x: 0, y: 0, z: 0}
+  fraction: 0
   moveFeet: 0
 --- !u!135 &251907212
 SphereCollider:
@@ -3722,6 +3723,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   control: {x: 0, y: 0, z: 0}
   t_trans: {x: 0, y: 0, z: 0}
+  fraction: 0
   moveFeet: 0
 --- !u!135 &932119154
 SphereCollider:
@@ -4076,19 +4078,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 527617424}
-  minHeightFromGround: 1
+  minHeightFromGround: 2
   feetCount: 8
   feetParent: {fileID: 2118458154}
-  feets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  swayAmount: 0.02
+  feets: []
+  swayAmount: 0.04
+  breathAmount: 0.1
 --- !u!1 &1060018414
 GameObject:
   m_ObjectHideFlags: 0
@@ -4498,6 +4493,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   control: {x: 0, y: 0, z: 0}
   t_trans: {x: 0, y: 0, z: 0}
+  fraction: 0
   moveFeet: 0
 --- !u!135 &1192532039
 SphereCollider:
@@ -4615,6 +4611,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   control: {x: 0, y: 0, z: 0}
   t_trans: {x: 0, y: 0, z: 0}
+  fraction: 0
   moveFeet: 0
 --- !u!135 &1198871168
 SphereCollider:
@@ -5428,6 +5425,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   control: {x: 0, y: 0, z: 0}
   t_trans: {x: 0, y: 0, z: 0}
+  fraction: 0
   moveFeet: 0
 --- !u!1 &1503392309
 GameObject:
@@ -6396,6 +6394,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   control: {x: 0, y: 0, z: 0}
   t_trans: {x: 0, y: 0, z: 0}
+  fraction: 0
   moveFeet: 0
 --- !u!1 &1840924630
 GameObject:
@@ -7202,6 +7201,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   control: {x: 0, y: 0, z: 0}
   t_trans: {x: 0, y: 0, z: 0}
+  fraction: 0
   moveFeet: 0
 --- !u!1 &1971034860
 GameObject:
@@ -7485,6 +7485,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   control: {x: 0, y: 0, z: 0}
   t_trans: {x: 0, y: 0, z: 0}
+  fraction: 0
   moveFeet: 0
 --- !u!1 &2047447807
 GameObject:

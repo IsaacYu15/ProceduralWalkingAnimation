@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BodyMovements : MonoBehaviour
 {
-
     public Transform body;
     public float minHeightFromGround;
 
@@ -14,6 +13,7 @@ public class BodyMovements : MonoBehaviour
     Vector3 averageFeet;
 
     public float swayAmount;
+    public float breathAmount;
     float fraction;
     float t_sway;
     bool swayUp;
@@ -26,7 +26,7 @@ public class BodyMovements : MonoBehaviour
 
         foreach (Transform child in feetParent)
         {
-            if (child.name.Contains("Feet"))
+            if (child.name.Contains("Target"))
             {
                 feets[i] = child.transform;
                 i++;
@@ -38,14 +38,12 @@ public class BodyMovements : MonoBehaviour
     void Update()
     {
         //adjust height of spider body based on height of feet;
-        for (int i = 0; i < feetCount; i ++)
+        for (int i = 0; i < feetCount; i++)
         {
             averageFeet += feets[i].position;
         }
 
         averageFeet = averageFeet / feetCount;
-
-        transform.position = new Vector3(transform.position.x, averageFeet.y + minHeightFromGround, transform.position.z);
 
         //body moves up and down slightly for a breathing effect 
         fraction += Time.deltaTime * 0.5f;
@@ -71,8 +69,9 @@ public class BodyMovements : MonoBehaviour
             }
         }
 
+        //apply calculations
         body.rotation = new Quaternion (t_sway * swayAmount, body.rotation.y, body.rotation.z, body.rotation.w);
-
+        transform.position = new Vector3(transform.position.x, averageFeet.y + minHeightFromGround + t_sway * breathAmount, transform.position.z);
 
     }
 

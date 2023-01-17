@@ -32,8 +32,15 @@ public class TargetPosition : MonoBehaviour
             step.target = target.transform.position + new Vector3(0, feet.transform.localScale.y / 2, 0) ;
             step.control = (target.transform.position + feet.transform.position) / 2 + Vector3.up * step.stepHeight;
 
+            if (!step.moveFeet)
+            {
+                step.fraction = 0;
+            }
+
             step.moveFeet = true;
-            step.fraction = 0;
+
+
+
         }
 
     }
