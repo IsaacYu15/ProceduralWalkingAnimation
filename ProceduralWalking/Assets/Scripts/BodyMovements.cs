@@ -46,7 +46,7 @@ public class BodyMovements : MonoBehaviour
         averageFeet = averageFeet / feetCount;
 
         //body moves up and down slightly for a breathing effect 
-        fraction += Time.deltaTime * 0.5f;
+        fraction += Time.deltaTime;
 
         if (swayUp)
         {

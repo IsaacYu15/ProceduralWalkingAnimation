@@ -14,7 +14,6 @@ public class IKScript : MonoBehaviour
 
     public Transform[] bones;
     public int chainLength;
-    public float limbLength;
 
     private void Start()
     {
@@ -30,8 +29,6 @@ public class IKScript : MonoBehaviour
                 i++;
             }
         }
-
-        limbLength = Vector3.Distance(bones[0].position, bones[chainLength - 1].position);
     }
 
 
