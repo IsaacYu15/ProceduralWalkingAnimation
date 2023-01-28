@@ -10,14 +10,14 @@ public class BodyMovements : MonoBehaviour
     public int feetCount = 8;
     public Transform feetParent;
     public Transform[] feets;
-    Vector3 averageFeet;
 
     public float swayAmount;
     public float breathAmount;
     float fraction;
     float t_sway;
-    bool swayUp;
 
+    public Vector3 averageRight;
+    public Vector3 averageLeft;
     private void Start()
     {
         feets = new Transform[feetCount];
@@ -37,42 +37,41 @@ public class BodyMovements : MonoBehaviour
 
     void Update()
     {
-        //adjust height of spider body based on height of feet;
+        //average positions of all feet
         for (int i = 0; i < feetCount; i++)
         {
-            averageFeet += feets[i].position;
+            if (i < 4)
+            {
+                averageLeft += feets[i].position;
+            }
+            else
+            {
+                averageRight += feets[i].position;
+            }
         }
 
-        averageFeet = averageFeet / feetCount;
+        averageRight = averageRight / (feetCount / 2);
+        averageLeft = averageLeft / (feetCount / 2);
+
+        var averageFeet = (averageLeft + averageRight) / 2;
+
+        //adjust rotation based on feet by getting the direction of the vector from "left feet" and "right feet"
+        var dir = averageLeft - averageRight;
+        var rot = Quaternion.LookRotation(dir, Vector3.up);
+
+        transform.rotation = new Quaternion(transform.rotation.x + rot.x, transform.rotation.y + rot.y, transform.rotation.z + rot.z, transform.rotation.w);
 
         //body moves up and down slightly for a breathing effect 
         fraction += Time.deltaTime;
+        t_sway = Mathf.Sin(fraction);
 
-        if (swayUp)
-        {
-            t_sway = Mathf.Lerp(-1, 1, fraction);
-
-            if (fraction > 1)
-            {
-                swayUp = false;
-                fraction = 0;
-            }
-        }
-        else
-        {
-            t_sway = Mathf.Lerp(1, -1, fraction);
-
-            if (fraction > 1)
-            {
-                swayUp = true;
-                fraction = 0;
-            }
-        }
-
-        //apply calculations
+        //apply transform calulations
         body.rotation = new Quaternion (t_sway * swayAmount, body.rotation.y, body.rotation.z, body.rotation.w);
         transform.position = new Vector3(transform.position.x, averageFeet.y + minHeightFromGround + t_sway * breathAmount, transform.position.z);
 
+        //reset
+        averageRight = Vector3.zero;
+        averageLeft = Vector3.zero;
     }
 
 }
