@@ -6,8 +6,7 @@ public class IKScript : MonoBehaviour
 {
     public Transform body;
     public Transform Target;
-
-    public StepAnimation stepAnim;
+    public TargetPosition TargetPosition;
 
     public Transform EndOfBone2;
     public Transform EndOfBone1;
@@ -17,6 +16,7 @@ public class IKScript : MonoBehaviour
 
     private void Start()
     {
+
         bones = new Transform[chainLength];
 
         int i = 0;
@@ -29,6 +29,8 @@ public class IKScript : MonoBehaviour
                 i++;
             }
         }
+
+
     }
 
 
@@ -42,14 +44,14 @@ public class IKScript : MonoBehaviour
         float t_side = Vector3.Distance(bones[0].position, EndOfBone1.position);
         float t_height = Mathf.Sqrt(Mathf.Pow(t_side, 2) - Mathf.Pow(t_base, 2));
 
-        Vector3 vertex = (bones[0].position + bones[1].position) / 2 + Vector3.up * t_height;
+        Quaternion limbDir = Quaternion.LookRotation(bones[0].position - bones[1].position);
+        Vector3 vertex = Quaternion.Euler(-limbDir.x, -limbDir.y, -limbDir.z) * ((bones[0].position + bones[1].position) / 2 + transform.up * t_height);
 
         bones[1].LookAt(vertex);
-
+        bones[0].LookAt(vertex);
         //have both bones look at the same point
         bones[0].LookAt(EndOfBone2.position);
         bones[1].LookAt(EndOfBone1.position);
-
 
 
     }

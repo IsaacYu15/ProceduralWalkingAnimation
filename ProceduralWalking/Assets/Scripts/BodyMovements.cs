@@ -18,6 +18,8 @@ public class BodyMovements : MonoBehaviour
 
     public Vector3 averageRight;
     public Vector3 averageLeft;
+    public Vector3 averageFeet;
+
     private void Start()
     {
         feets = new Transform[feetCount];
@@ -32,6 +34,16 @@ public class BodyMovements : MonoBehaviour
                 i++;
             }
         }
+
+        for (int a = 0; a < feetCount; a++)
+        {
+            averageFeet += feets[a].position;
+        }
+
+        transform.position = (averageFeet / 8) + transform.up * minHeightFromGround;
+
+        
+
     }
 
 
@@ -53,25 +65,21 @@ public class BodyMovements : MonoBehaviour
         averageRight = averageRight / (feetCount / 2);
         averageLeft = averageLeft / (feetCount / 2);
 
-        var averageFeet = (averageLeft + averageRight) / 2;
+        averageFeet = (averageLeft + averageRight) / 2;
 
         //body moves up and down slightly for a breathing effect 
         fraction += Time.deltaTime;
         t_sway = Mathf.Sin(fraction);
-
-        //apply transform calulations
         body.rotation = new Quaternion (t_sway * swayAmount, body.rotation.y, body.rotation.z, body.rotation.w);
-        transform.position = new Vector3(transform.position.x, averageFeet.y + minHeightFromGround + t_sway * breathAmount, transform.position.z);
 
+        transform.position = new Vector3(transform.position.x, averageFeet.y + minHeightFromGround + t_sway * breathAmount, transform.position.z);
 
         //adjust rotation based on feet by getting the direction of the vector from "left feet" and "right feet"
         var dir = averageLeft - averageRight;
         var rot = Quaternion.LookRotation(dir, Vector3.up);
-        Debug.DrawLine(averageLeft, averageRight, Color.green, 0.1f);
 
         //get up down rotation with only front and back legs
         var dir2 = (feets[0].position + feets[feetCount / 2].position) / 2 - (feets[feetCount / 2 - 1].position + feets[feetCount - 1].position) / 2;
-        Debug.DrawLine( (feets[0].position + feets[feetCount / 2].position) / 2, (feets[feetCount / 2 - 1].position + feets[feetCount - 1].position) / 2, Color.green, 0.1f);
         var rot2 = Quaternion.LookRotation(dir2, Vector3.up);
 
         transform.rotation = new Quaternion(rot2.x, transform.rotation.y, rot.z, transform.rotation.w);
@@ -79,6 +87,7 @@ public class BodyMovements : MonoBehaviour
         //reset
         averageRight = Vector3.zero;
         averageLeft = Vector3.zero;
+        averageFeet = Vector3.zero;
     }
 
 }

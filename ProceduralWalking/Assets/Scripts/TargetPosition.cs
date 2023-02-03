@@ -4,44 +4,60 @@ using UnityEngine;
 
 public class TargetPosition : MonoBehaviour
 {
-
+    public Transform feetParent;
     public Transform target; 
     public Transform feet;
     StepAnimation step;
 
     public float maxStep;
+    public float maxStepUp = 1f;
+
+    Vector3 prevStep;
 
     private void Start()
     {
         step = feet.GetComponent<StepAnimation>();
+
     }
+
     void Update()
     {
         RaycastHit hit;
         
-        //set target position (moves with body while feet stay grounded)
-        if (Physics.Raycast(transform.position, Vector3.down,  out hit, Mathf.Infinity, 1 << 7) )
+        //detect the position for where the spider could put its feet
+        if (Physics.Raycast(transform.position, -feetParent.transform.up,  out hit, Mathf.Infinity, 1 << 7) )
         {
-            target.transform.position = hit.point;
+            Vector3 t_hit = hit.point; t_hit.y = 0;
+
+            if (Vector3.Distance(prevStep, t_hit) > 2f)
+            {
+                target.transform.position = hit.point;
+                prevStep = t_hit;
+                
+            }
         }
 
         //if the distance between the feet and the target position is too great, move the feet to the target position
-        if (Vector3.Distance (feet.position - new Vector3 (0, feet.transform.localScale.y/2), target.position) > maxStep)
+        if (Vector3.Distance (feet.position - feet.parent.transform.up.normalized * feet.transform.localScale.y, target.position) > maxStep)
         {
-            step.t_trans = feet.transform.position;
-            step.target = target.transform.position + new Vector3(0, feet.transform.localScale.y / 2, 0) ;
-            step.control = (target.transform.position + feet.transform.position) / 2 + Vector3.up * step.stepHeight;
-
-            if (!step.moveFeet)
-            {
-                step.fraction = 0;
-            }
-
-            step.moveFeet = true;
-
-
-
+            MoveFeet();
         }
+
+    }
+
+    public void MoveFeet ()
+    {
+        step.t_trans = feet.transform.position;
+        step.target = target.transform.position + feet.parent.transform.up.normalized * feet.transform.localScale.y / 2;
+        step.control = (target.transform.position + feet.transform.position) / 2 + feetParent.transform.up.normalized * step.stepHeight;
+
+        if (!step.moveFeet)
+        {
+            step.fraction = 0;
+        }
+
+        step.moveFeet = true;
+
 
     }
 
