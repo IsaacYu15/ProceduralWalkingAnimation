@@ -7,10 +7,11 @@ public class TargetPosition : MonoBehaviour
     public Transform feetParent;
     public Transform target; 
     public Transform feet;
-    StepAnimation step;
+    public StepAnimation step;
 
     public float maxStep;
     public float maxStepUp = 1f;
+    public bool overRide = false;
 
     Vector3 prevStep;
 
@@ -29,11 +30,11 @@ public class TargetPosition : MonoBehaviour
         {
             Vector3 t_hit = hit.point; t_hit.y = 0;
 
-            if (Vector3.Distance(prevStep, t_hit) > 2f)
+            if (Vector3.Distance(prevStep, t_hit) > 2f || overRide)
             {
                 target.transform.position = hit.point;
                 prevStep = t_hit;
-                
+                overRide = false;
             }
         }
 
@@ -51,13 +52,18 @@ public class TargetPosition : MonoBehaviour
         step.target = target.transform.position + feet.parent.transform.up.normalized * feet.transform.localScale.y / 2;
         step.control = (target.transform.position + feet.transform.position) / 2 + feetParent.transform.up.normalized * step.stepHeight;
 
-        if (!step.moveFeet)
+        Vector3 pos1 = step.t_trans; pos1.y = 0;
+        Vector3 pos2 = target.position; pos2.y = 0;
+
+        if (Vector3.Distance (pos1, pos2) > 0.1f)
         {
-            step.fraction = 0;
+            if (!step.moveFeet)
+            {
+                step.fraction = 0;
+            }
+            step.moveFeet = true;
         }
-
-        step.moveFeet = true;
-
+       
 
     }
 

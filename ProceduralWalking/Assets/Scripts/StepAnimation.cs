@@ -30,12 +30,10 @@ public class StepAnimation : MonoBehaviour
             } else
             {
                 moveFeet = false;
+                fraction = 0;
             }
 
-        } else
-        {
-            fraction = 0;
-        }
+        } 
 
     }
 }
