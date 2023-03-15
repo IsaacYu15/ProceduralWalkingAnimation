@@ -33,8 +33,6 @@ public class IKScript : MonoBehaviour
 
     }
 
-    public bool gay;
-
     void Update()
     {
 
