@@ -5,12 +5,11 @@ For video updates of the entire process see my [playlist!](https://www.youtube.c
 For the final product see [this video!](https://www.youtube.com/watch?v=AifGsKtQZbg&list=PLNU3z4IRiDwMw8vPPhgJRYFnzJ09e3jGd&index=5)
  
 ## BUILT USING
-  [Unity](https://unity.com/download) - A game engine designed for real-time 3D & 2D projects
+- [Unity](https://unity.com/download) - A game engine designed for real-time 3D & 2D projects
 
 ## PREREQUISITES
-  [Unity](https://unity.com/download) Version 2021.3.11f1. 
-  
-  [C# in VsCode](https://code.visualstudio.com/docs/languages/csharp)
+- [Unity](https://unity.com/download) Version 2021.3.11f1. 
+- [C# in VsCode](https://code.visualstudio.com/docs/languages/csharp)
   
 ## TRY IT YOURSELF!
   1. Download the project as a ZipFile
